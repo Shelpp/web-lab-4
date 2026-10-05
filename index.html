@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Задание 4 — Bootstrap, сетка, Mobile First</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-lg py-3 py-lg-4">
+
+    <header class="site-header row align-items-center g-3 mx-0 mb-3 p-3 rounded">
+      <div class="col-auto">
+        <svg width="48" height="48" viewBox="0 0 48 48" role="img" aria-label="Логотип">
+          <rect width="48" height="48" rx="10" fill="#ffffff"/>
+          <path d="M12 34V14h8a6 6 0 0 1 0 12h-8m16 8V14m0 10 10-10m-10 10 10 10"
+                fill="none" stroke="#1d4e89" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="col text-center">
+        <h1 class="h3 m-0">Название сайта</h1>
+      </div>
+      <div class="col-auto d-none d-md-block site-header-spacer"></div>
+    </header>
+
+    <nav class="site-panel rounded mb-3 px-3 py-2" aria-label="Главное меню">
+      <ul class="nav flex-column flex-md-row">
+        <li class="nav-item"><a class="nav-link ps-0 pe-md-4" href="#">Ссылка меню 1</a></li>
+        <li class="nav-item"><a class="nav-link ps-0 pe-md-4" href="#">Ссылка 2</a></li>
+        <li class="nav-item"><a class="nav-link ps-0" href="#">Ссылка 3</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="row g-3 mb-3">
+        <!-- В потоке HTML список ссылок идёт ДО таблицы.
+             Mobile First: на смартфоне таблица выше (order-1 / order-2),
+             с планшета (md) порядок как в HTML, сетка 4 + 8 колонок. -->
+        <div class="col-12 col-md-4 order-2 order-md-1">
+          <section class="site-panel rounded h-100 p-3" aria-labelledby="links-title">
+            <h2 class="h5 mb-2" id="links-title">Список гиперссылок</h2>
+            <ul class="mb-0 ps-3">
+              <li class="mb-1"><a href="https://getbootstrap.com/docs/5.3/layout/grid/">Сетка Bootstrap</a></li>
+              <li class="mb-1"><a href="https://getbootstrap.com/docs/5.3/utilities/spacing/">Отступы Bootstrap</a></li>
+              <li class="mb-1"><a href="https://validator.w3.org/">Валидатор HTML (W3C)</a></li>
+              <li><a href="https://pages.github.com/">GitHub Pages</a></li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="col-12 col-md-8 order-1 order-md-2">
+          <section class="site-panel rounded h-100 p-3" aria-labelledby="table-title">
+            <h2 class="h5 mb-2" id="table-title">Таблица</h2>
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle mb-0">
+                <caption class="visually-hidden">Сравнение подходов к вёрстке</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Подход</th>
+                    <th scope="col">Раскладка</th>
+                    <th scope="col">Баллы</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Подключение фреймворка</td><td>Bootstrap 5</td><td>5</td></tr>
+                  <tr><td>Сетка</td><td>row / col-*</td><td>10</td></tr>
+                  <tr><td>Mobile First</td><td>col-12 → col-md-*</td><td>10</td></tr>
+                  <tr><td>Отступы</td><td>m-*, p-*, g-*</td><td>5</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12">
+          <section class="site-panel rounded p-3" aria-labelledby="form-title">
+            <h2 class="h5 mb-3" id="form-title">Форма</h2>
+            <form action="#" method="post">
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="name">Имя</label>
+                  <input class="form-control" type="text" id="name" name="name" autocomplete="name">
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="email">Электронная почта</label>
+                  <input class="form-control" type="email" id="email" name="email" autocomplete="email">
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="message">Сообщение</label>
+                  <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit">Отправить</button>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-header rounded px-3 py-4">
+      <p class="m-0">&copy; Сергей Синица</p>
+    </footer>
+
+  </div>
+</body>
+</html>

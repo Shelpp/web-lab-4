@@ -1,0 +1,42 @@
+/* Задание 4: собственные стили поверх Bootstrap.
+   Сетка, адаптивность и отступы (margin/padding) — классами Bootstrap. */
+
+:root {
+  --ink: #1b2430;
+  --paper: #eef2f7;
+  --panel: #ffffff;
+  --blue: #1d4e89;
+  --line: #b9c7d8;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.site-header {
+  color: #fff;
+  background: var(--blue);
+}
+/* Выравнивание названия по центру относительно логотипа на широких экранах */
+.site-header-spacer { width: 48px; }
+
+.site-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+a { color: var(--blue); }
+.nav-link { color: var(--blue); }
+.nav-link:hover { text-decoration: underline; }
+
+.table > :not(caption) > * > * { border-color: var(--line); }
+.table thead th { background: #dbe7f5; }
+
+.btn-primary {
+  --bs-btn-bg: var(--blue);
+  --bs-btn-border-color: var(--blue);
+  --bs-btn-hover-bg: #163c6b;
+  --bs-btn-hover-border-color: #163c6b;
+}
